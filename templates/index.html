@@ -9,6 +9,9 @@
         div {
           border-style: double;
         }
+        p {
+          border-style: ridge;
+        }
         </style>
     <title>Quiz 5</title>
 </head>
@@ -20,25 +23,26 @@
 </div>
 <div>
     <form action="{{url_for('index')}}" enctype=multipart/form-data method="POST" style="width:30%;">
-        <label for="words">Enter text </label>
+        <label for="words">Enter text to save in file</label>
         <input type="text" id="words" name="words">
-
-        <label for="occ">Enter word to search for count of occurances </label>
-        <input type="text" id="occ" name="occ">
+        <label for="filename">Enter the file name </label>
+        <input type="text" id="filename" name="filename">
+        <a href="/"><input type="submit" value="Save File"></a>
         <p>
-            The name of the textfile is
-        </p><br>
-        <p>
-            {{ textfile }}
-        </p><br><br>
-        <p>
-            The number of words in a textfile is
-        </p><br>
-        <p>
-            {{ number }}
+           filename  : {{ textfile }}
         </p>
-        <a href="/"><input type="submit" value="Find"></a>
+        <p>
+            Count of words in a textfile is : {{ number }}
+        </p>
     </form>
+
+    <form action="{{url_for('search_occurances')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+        <label for="word">Enter a word to find the occurances</label>
+        <input type="text" id="word" name="word">
+        <a href="/searchoccurances"><input type="submit" value="Find occurance"></a>
+        <p>
+            The number of occurance of the entered word is :{{ occu }}
+        </p>    </form>
 </div>
 </body>
 </html>
