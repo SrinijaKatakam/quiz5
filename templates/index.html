@@ -9,7 +9,6 @@
         div {
           border-style: double;
         }
-        body {background-color: blanchedalmond;}
         </style>
     <title>Quiz 5</title>
 </head>
@@ -20,10 +19,25 @@
     <h3>Quiz 5</h3>
 </div>
 <div>
-    <form action="{{url_for('search_word')}}" enctype=multipart/form-data method="POST" style="width:30%;">
-        <label for="words">Enter a word to search the books</label>
+    <form action="{{url_for('index')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+        <label for="words">Enter text </label>
         <input type="text" id="words" name="words">
-        <a href="/searchword"><input type="submit" value="Find"></a>
+
+        <label for="occ">Enter word to search for count of occurances </label>
+        <input type="text" id="occ" name="occ">
+        <p>
+            The name of the textfile is
+        </p><br>
+        <p>
+            {{ textfile }}
+        </p><br><br>
+        <p>
+            The number of words in a textfile is
+        </p><br>
+        <p>
+            {{ number }}
+        </p>
+        <a href="/"><input type="submit" value="Find"></a>
     </form>
 </div>
 </body>
