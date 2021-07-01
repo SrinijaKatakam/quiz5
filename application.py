@@ -8,6 +8,15 @@ application = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 word_file = os.path.join(basedir, 'static/doc1.txt')
 
+filename1 = "as.txt"
+filename2 = "bs.txt"
+filename3 = "cs.txt"
+filename4 = "ds.txt"
+filename5 = "es.txt"
+filename6 = "fs.txt"
+filename7 = "gs.txt"
+filename8 = "hs.txt"
+
 
 @application.route('/', methods=['GET', 'POST'])
 def index():
@@ -178,6 +187,145 @@ def search_texts():
 
 
     return render_template('index.html', len1 = word_len1, len2 = word_len2, len3 = word_len3, len4 = word_len4, len5 = word_len5, len6 = word_len6, len7 = word_len7, len8 = word_len8, files1 = filename1, files2 = filename2, files3 = filename3, files4 = filename4, files5 = filename5, files6 = filename6, files7 = filename7, files8 = filename8)
+
+
+@application.route('/removestopwords', methods = ['GET', 'POST'])
+def remove_stopwords():
+    stops = []
+    word_file1 = []
+    word_files1 = []
+    word_file2 = []
+    word_files2 = []
+    word_file3 = []
+    word_files3 = []
+    word_file4 = []
+    word_files4 = []
+    word_file5 = []
+    word_files5 = []
+    word_file6 = []
+    word_files6 = []
+    word_file7 = []
+    word_files7 = []
+    word_file8 = []
+    word_files8 = []
+    stop_words = os.path.join(basedir, 'static/shortliststopwords.txt')
+    with open(stop_words, 'rb') as fileinput:
+        for line in fileinput:
+            for words in line.split():
+                stops.append(str(words)[2:-1])
+
+    file1 = os.path.join(basedir, 'static/'+filename1)
+    with open(file1, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file1.append(str(words)[2:-1])
+
+    initial1 = len(word_file1)
+    for word in word_file1:
+        if word not in stops:
+            word_files1.append(word)
+
+    after1 = len(word_files1)
+    total1 = initial1 - after1
+
+    file2 = os.path.join(basedir, 'static/' + filename2)
+    with open(file2, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file2.append(str(words)[2:-1])
+
+    initial2 = len(word_file2)
+    for word in word_file2:
+        if word not in stops:
+            word_files2.append(word)
+
+    after2 = len(word_files2)
+    total2 = initial2 - after2
+
+    file3 = os.path.join(basedir, 'static/' + filename3)
+    with open(file3, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file3.append(str(words)[2:-1])
+
+    initial3 = len(word_file3)
+    for word in word_file3:
+        if word not in stops:
+            word_files3.append(word)
+
+    after3 = len(word_files3)
+    total3 = initial3 - after3
+
+    file4 = os.path.join(basedir, 'static/' + filename4)
+    with open(file4, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file4.append(str(words)[2:-1])
+
+    initial4 = len(word_file4)
+    for word in word_file4:
+        if word not in stops:
+            word_files4.append(word)
+
+    after4 = len(word_files4)
+    total4 = initial4 - after4
+
+    file5 = os.path.join(basedir, 'static/' + filename5)
+    with open(file5, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file5.append(str(words)[2:-1])
+
+    initial5 = len(word_file5)
+    for word in word_file5:
+        if word not in stops:
+            word_files5.append(word)
+
+    after5 = len(word_files5)
+    total5 = initial5 - after5
+
+    file6 = os.path.join(basedir, 'static/' + filename6)
+    with open(file6, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file6.append(str(words)[2:-1])
+
+    initial6 = len(word_file6)
+    for word in word_file6:
+        if word not in stops:
+            word_files6.append(word)
+
+    after6 = len(word_files6)
+    total6 = initial6 - after6
+
+    file7 = os.path.join(basedir, 'static/' + filename7)
+    with open(file7, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file7.append(str(words)[2:-1])
+
+    initial7 = len(word_file7)
+    for word in word_file7:
+        if word not in stops:
+            word_files7.append(word)
+
+    after7 = len(word_files7)
+    total7 = initial7 - after7
+
+    file8 = os.path.join(basedir, 'static/' + filename8)
+    with open(file8, 'rb'):
+        for line in fileinput:
+            for words in line.split():
+                word_file8.append(str(words)[2:-1])
+
+    initial8 = len(word_file8)
+    for word in word_file8:
+        if word not in stops:
+            word_files8.append(word)
+
+    after8 = len(word_files8)
+    total8 = initial8 - after8
+    return render_template('index.html', lens1 = total1, lens2 = total2, lens3 = total3, lens4 = total4, lens5 = total5, lens6 = total6, lens7 = total7, lens8 = total8, files1 = filename1, files2 = filename2, files3 = filename3, files4 = filename4, files5 = filename5, files6 = filename6, files7 = filename7, files8 = filename8)
 
 if __name__ == '_main_':
     application.run()
