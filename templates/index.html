@@ -36,13 +36,148 @@
         </p>
     </form>
 
-    <form action="{{url_for('search_occurances')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+    <form action="{{url_for('search_occ')}}" enctype=multipart/form-data method="POST" style="width:30%;">
         <label for="word">Enter a word to find the occurances</label>
         <input type="text" id="word" name="word">
-        <a href="/searchoccurances"><input type="submit" value="Find occurance"></a>
+        <a href="/searchocc"><input type="submit" value="Find occurance"></a>
         <p>
             The number of occurance of the entered word is :{{ occu }}
-        </p>    </form>
-</div>
+        </p> 
+        </form>
+        <form action="{{url_for('search_texts')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+            <fieldset>
+            <legend>5C</legend>
+            <label for="wordss1">Enter a word to search the books</label>
+            <input type="text" id="wordss1" name="wordss1">
+            <label for="filename1">Enter the filename to save </label>
+            <input type="text" id="filename1" name="filename1"><br><br>
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files1 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len1 }}
+                </p>
+                <label for="wordss2">Enter a word to search the books</label>
+            <input type="text" id="wordss2" name="wordss2">
+            <label for="filename2">Enter the filename to save </label>
+            <input type="text" id="filename2" name="filename2"><br><br>
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files2 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len2 }}
+                </p>
+                <label for="wordss3">Enter a word to search the books</label>
+            <input type="text" id="wordss3" name="wordss3">
+            <label for="filename3">Enter the filename to save </label>
+            <input type="text" id="filename3" name="filename3"><br><br>
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files3 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len3 }}
+                </p>
+                <label for="wordss4">Enter a word to search the books</label>
+            <input type="text" id="wordss4" name="wordss4">
+            <label for="filename4">Enter the filename to save </label>
+            <input type="text" id="filename4" name="filename4"><br><br>
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files4 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len4 }}
+                </p>
+                <label for="wordss5">Enter a word to search the books</label>
+            <input type="text" id="wordss5" name="wordss5">
+            <label for="filename5">Enter the filename to save </label>
+            <input type="text" id="filename5" name="filename5"><br><br>
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files5 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len5 }}
+                </p>
+                <label for="wordss6">Enter a word to search the books</label>
+            <input type="text" id="wordss6" name="wordss6">
+            <label for="filename6">Enter the filename to save </label>
+            <input type="text" id="filename6" name="filename6"><br><br>
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files6 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len6 }}
+                </p>
+                <label for="wordss7">Enter a word to search the books</label>
+            <input type="text" id="wordss7" name="wordss7">
+            <label for="filename7">Enter the filename to save </label>
+            <input type="text" id="filename7" name="filename7"><br><br>
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files7 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len7 }}
+                </p>
+                <label for="wordss8">Enter a word to search the books</label>
+            <input type="text" id="wordss8" name="wordss8">
+            <label for="filename8">Enter the filename to save </label>
+            <input type="text" id="filename8" name="filename8">
+                <p>
+                    The Filename is
+                </p>
+                <p>
+                    {{ files8 }}
+                </p>
+                <p>
+                    Number of words is
+                </p>
+                <p>
+                    {{ len8 }}
+                </p>
+    
+            <a href="/searchtexts"><input type="submit" value="Find"></a>
+            </fieldset>
+        </form></div>
 </body>
 </html>
