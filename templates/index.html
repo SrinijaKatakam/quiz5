@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 {
+          border-style: double;
+        }
+        
+        div {
+          border-style: double;
+        }
+        </style>
+    <title>Quiz 5</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>Srinija Katakam</h1>
+    <h3>1001861512</h3>
+    <h3>Quiz 5</h3>
+</div>
+<div>
+    <form action="{{url_for('search_word')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+        <label for="words">Enter a word to search the books</label>
+        <input type="text" id="words" name="words">
+        <a href="/searchword"><input type="submit" value="Find"></a>
+    </form>
+</div>
+</body>
+</html>

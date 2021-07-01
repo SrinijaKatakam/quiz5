@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1 {
+              border-style: double;
+            }
+            
+            div {
+              border-style: double;
+            }
+            p {
+              border-style: ridge;
+            }
+            </style>
+        <title>Quiz 5</title>
+    </head>
+    <body>
+    <div style="text-align: center">
+        <h1>Srinija Katakam</h1>
+        <h3>1001861512</h3>
+        <h3>Quiz 5</h3>
+    </div>
+    <p>
+        Word found in the following files<br><br>
+        {% for values in file %}
+            {{values}}<br><br>
+        {% endfor %}
+    </p>
+</div>
+</body>
+</html>
